@@ -1,0 +1,273 @@
+:root {
+    /* COLORS */
+    --header-outline: hsl(217, 16%, 45%);
+    --bg-light-1: #f3f3f3;
+    --bg-light-2: #dadada;
+    --color-hover: #979797;
+    --shadow-light: #babfd4;
+    --shadow-mint: rgba(0, 0, 0, 0.35);
+    --color-white: #fff;
+    --text-dark: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --bg-dark-1: hsl(214, 47%, 23%);
+    --bg-dark-2: hsl(237, 49%, 15%);
+    --color-danger: #db2e4d;
+    --scissors-grade-1: hsl(39, 89%, 49%);
+    --scissors-grade-2: hsl(40, 84%, 53%);
+    --paper-grade-1: hsl(230, 89%, 62%);
+    --paper-grade-2: hsl(230, 89%, 65%);
+    --rock-grade-1: hsl(349, 71%, 52%);
+    --rock-grade-2: hsl(349, 70%, 56%);
+}
+
+/* ---------------------------------------- */
+/* RESET BROWSER DEFAULTS*/
+/* ---------------------------------------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+}
+
+/* ---------------------------------------- */
+/* Initialize base styles for some elements */
+/* ---------------------------------------- */
+h1 {
+    font-size: 5.6rem;
+    color: var(--color-white);
+}
+
+h2 {
+    font-size: 5rem;
+    color: var(--text-dark);
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 3.8rem;
+    }
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--score-text);
+    letter-spacing: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    h3 {
+        font-size: 1rem;
+        letter-spacing: 1.56px;
+    }
+}
+
+span {
+    font-size: 2.4rem;
+    color: var(--color-white);
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    span {
+        font-size: 1.5rem;
+        letter-spacing: 1.88px;
+        font-weight: 700;
+    }
+}
+
+/* ---------------------------------------- */
+/* RESUSABLE CLASSES */
+/* ---------------------------------------- */
+
+/* .............. FLEX ............... */
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    transition: all 0.5s;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* ............... GRID .............. */
+.d-grid {
+    display: grid;
+}
+
+.grid-2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.place-items-center {
+    place-items: center;
+}
+
+.justify-self-start {
+    justify-self: start;
+}
+
+.justify-self-end {
+    justify-self: end;
+}
+
+.justify-self-center {
+    justify-self: center;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.align-self-end {
+    align-self: end;
+}
+
+/* .......... MARGINS ........... */
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mt-8 {
+    margin-top: 8rem;
+}
+
+.mt-10 {
+    margin-top: 10rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mb-10 {
+    margin-bottom: 10rem;
+}
+
+/* .......... PADDINGS ........... */
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.p-3 {
+    padding: 3rem;
+}
+
+.p-5 {
+    padding: 5rem;
+}
+
+.p-10 {
+    padding: 10rem;
+}
+
+.pt-3 {
+    padding-top: 3rem;
+}
+
+.pt-5 {
+    padding-top: 5rem;
+}
+
+.pt-8 {
+    padding-top: 8rem;
+}
+
+.pt-10 {
+    padding-top: 10rem;
+}
+
+.pb-3 {
+    padding-bottom: 3rem;
+}
+
+.pb-5 {
+    padding-bottom: 5rem;
+}
+
+.pb-10 {
+    padding-bottom: 10rem;
+}
+
+/* .......... GAPS ........... */
+.g-1 {
+    gap: 1rem;
+}
+
+.g-2 {
+    gap: 2rem;
+}
+
+.g-3 {
+    gap: 3rem;
+}
+
+.g-5 {
+    gap: 5rem;
+}
+
+.g-10 {
+    gap: 10rem;
+}
+
+/* ......... HIDING ELEMENTS ........ */
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    transition: all 0.5s;
+}

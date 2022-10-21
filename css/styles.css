@@ -37,6 +37,13 @@ html {
 }
 
 body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.6rem;
+    color: var(--color-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    background: radial-gradient(at top, var(--bg-dark-1), var(--bg-dark-2));
+    min-height: 100vh;
 }
 
 /* ---------------------------------------- */
@@ -54,7 +61,7 @@ h2 {
 
 @media screen and (max-width: 768px) {
     h2 {
-        font-size: 3.8rem;
+        font-size: 4rem;
     }
 }
 
@@ -91,6 +98,17 @@ span {
 /* ---------------------------------------- */
 
 /* .............. FLEX ............... */
+.container {
+    position: relative;
+    max-width: 70rem;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 32rem;
+    }
+}
+
 .hide {
     opacity: 0;
     pointer-events: none;
@@ -270,4 +288,46 @@ span {
     visibility: hidden;
 
     transition: all 0.5s;
+}
+
+/* ---------------------------------------- */
+/* HEADER SECTION */
+/* ---------------------------------------- */
+.header {
+    height: 15rem;
+    border: 3px solid var(--header-outline);
+    border-radius: 1rem;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.score {
+    background: linear-gradient(
+        to bottom right,
+        var(--bg-light-1),
+        var(--bg-light-2)
+    );
+    border-radius: 1rem;
+    width: 15rem;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        height: 9.6rem;
+        border: 3px solid var(--header-outline);
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+
+    .logo {
+        height: 90%;
+    }
+
+    .score {
+        width: 8rem;
+        border-radius: 0.6rem;
+    }
 }

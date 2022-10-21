@@ -290,6 +290,59 @@ span {
     transition: all 0.5s;
 }
 
+.display-none {
+    display: none;
+}
+
+/* ---------------------------------------- */
+/* RESUSABLE COMPONENTS */
+/* ---------------------------------------- */
+/* ..... BUTTON COMPONENT...... */
+.btn {
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+    letter-spacing: 2.5px;
+    text-transform: inherit;
+    border-radius: 0.6rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 1rem 3.5rem;
+}
+
+.btn--long {
+    padding: 1rem 5rem;
+}
+
+.btn--primary {
+    background: linear-gradient(
+        to bottom right,
+        var(--bg-light-1),
+        var(--bg-light-2)
+    );
+    color: var(--text-dark);
+}
+
+.btn--primary:hover {
+    color: var(--color-danger);
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.btn--outline:hover {
+    background: linear-gradient(
+        to bottom right,
+        var(--bg-light-1),
+        var(--bg-light-2)
+    );
+    color: var(--text-dark);
+}
+
 /* ---------------------------------------- */
 /* HEADER SECTION */
 /* ---------------------------------------- */
@@ -330,4 +383,343 @@ span {
         width: 8rem;
         border-radius: 0.6rem;
     }
+}
+
+/* ---------------------------------------- */
+/* GAME SECTION */
+/* ---------------------------------------- */
+.game {
+    position: relative;
+    grid-template-areas:
+        "paper scissors"
+        "rock rock";
+    height: 43rem;
+}
+
+.game::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 28%;
+    top: 25%;
+    background: url(/images/bg-triangle.svg) no-repeat;
+    z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+    .game {
+        height: 28.2rem;
+        margin-top: 15rem;
+    }
+}
+
+.choice-btn {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.choice-btn[data-choice="paper"] {
+    grid-area: paper;
+}
+
+.choice-btn[data-choice="scissors"] {
+    grid-area: scissors;
+}
+
+.choice-btn[data-choice="rock"] {
+    grid-area: rock;
+}
+
+.choice {
+    position: relative;
+    width: 15.2rem;
+    height: 15.2rem;
+    background: linear-gradient(
+        to bottom right,
+        var(--bg-light-1),
+        var(--bg-light-2)
+    );
+    border-radius: 50%;
+
+    box-shadow: inset 0 0.6rem var(--shadow-light);
+}
+
+.choice img {
+    transform: scale(1.5);
+}
+
+.choice::before {
+    content: "";
+    position: absolute;
+    left: -15%;
+    top: -15%;
+    width: 130%;
+    height: 130%;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.choice.paper::before {
+    background: linear-gradient(
+        to bottom,
+        var(--paper-grade-1),
+        var(--paper-grade-2)
+    );
+
+    box-shadow: 0 0.6rem hsla(230, 89%, 62%, 0.85);
+}
+
+.choice.scissors::before {
+    background: linear-gradient(
+        to bottom,
+        var(--scissors-grade-1),
+        var(--scissors-grade-2)
+    );
+
+    box-shadow: 0 0.6rem hsla(39, 89%, 49%, 0.85);
+}
+
+.choice.rock::before {
+    background: linear-gradient(
+        to bottom,
+        var(--rock-grade-1),
+        var(--rock-grade-2)
+    );
+
+    box-shadow: 0 0.6rem hsla(349, 71%, 52%, 0.85);
+}
+
+.choice-btn:hover .choice.paper::before,
+.choice-btn:hover .choice.scissors::before,
+.choice-btn:hover .choice.rock::before {
+    box-shadow: 0 0 0 3rem #97979726;
+}
+
+@media screen and (max-width: 768px) {
+    .choice {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .choice img {
+        transform: scale(0.8);
+    }
+
+    .game::before {
+        transform: scale(0.6);
+        top: 5%;
+        left: 2%;
+    }
+
+    .choice.paper::before {
+        box-shadow: 0 0.5rem hsla(230, 89%, 62%, 0.85);
+    }
+
+    .choice.scissors::before {
+        box-shadow: 0 0.5rem hsla(39, 89%, 49%, 0.85);
+    }
+
+    .choice.rock::before {
+        box-shadow: 0 0.5rem hsla(349, 71%, 52%, 0.85);
+    }
+
+    .choice-btn:hover .choice.paper::before,
+    .choice-btn:hover .choice.scissors::before,
+    .choice-btn:hover .choice.rock::before {
+        box-shadow: 0 0 0 2rem #97979726;
+    }
+}
+
+/* ---------------------------------------- */
+/* RULES SECTION */
+/* ---------------------------------------- */
+.rules-btn {
+    position: absolute;
+    bottom: 5rem;
+    right: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .rules-btn {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 10rem;
+    }
+}
+
+/* ---------------------------------------- */
+/* MODAL SECTION */
+/* ---------------------------------------- */
+.modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+    /* pointer-events: none; */
+}
+
+.modal__container {
+    background: var(--color-white);
+    border-radius: 0.5rem;
+    grid-template-areas:
+        "heading button"
+        "image image";
+    margin-top: -15rem;
+}
+
+.modal__header {
+    grid-area: heading;
+}
+
+.modal__heading {
+    font-size: 3.2rem;
+}
+
+.close-btn {
+    grid-area: button;
+    cursor: pointer;
+}
+
+.image__container {
+    grid-area: image;
+}
+
+@media screen and (max-width: 768px) {
+    .modal__container {
+        background: var(--color-white);
+        border-radius: 0.5rem;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "heading"
+            "image"
+            "button";
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal__header {
+        grid-area: heading;
+        align-self: start;
+        justify-self: center;
+    }
+
+    .close-btn {
+        grid-area: button;
+        cursor: pointer;
+        align-self: start;
+        justify-self: center;
+    }
+
+    .image__container {
+        grid-area: image;
+        align-self: start;
+        justify-self: center;
+    }
+}
+
+/* ---------------------------------------- */
+/* RESULTS SECTION */
+/* ---------------------------------------- */
+.results {
+    grid-template-areas:
+        "you the-house"
+        "you-choice the-house-choice";
+
+    max-width: 100rem;
+}
+
+.results__heading:first-of-type {
+    grid-area: you;
+}
+
+.results__heading:last-of-type {
+    grid-area: the-house;
+}
+
+.results__result:first-of-type {
+    grid-area: you-choice;
+}
+
+.results__result:last-of-type {
+    grid-area: the-house-choice;
+}
+
+.results__result {
+    min-width: 15rem;
+    min-height: 15rem;
+    background: rgba(0, 0, 0, 0.253);
+    border-radius: 50%;
+    transform: scale(1.4);
+    z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+    .results {
+        max-width: 33rem;
+        grid-template-areas:
+            "you-choice the-house-choice"
+            "you the-house";
+    }
+
+    .results__result {
+        min-width: 10rem;
+        min-height: 10rem;
+        margin-top: 8rem;
+        transform: scale(1);
+    }
+
+    .results__heading:first-of-type {
+        grid-area: you;
+    }
+
+    .results__heading:last-of-type {
+        grid-area: the-house;
+    }
+
+    .results__result:first-of-type {
+        grid-area: you-choice;
+    }
+
+    .results__result:last-of-type {
+        grid-area: the-house-choice;
+    }
+
+    .results__heading {
+        margin-top: 5rem;
+    }
+}
+
+.results.show-winner {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "you . the-house"
+        "you-choice result-winner the-house-choice";
+}
+
+.results__winner {
+    grid-area: result-winner;
+    margin-bottom: -7rem;
+}
+
+.winner .choice::after {
+    box-shadow: 0 0 0 60px rgba(132, 129, 172, 0.122),
+        0 0 0 100px rgba(166, 162, 210, 0.09),
+        0 0 0 150px rgba(73, 70, 100, 0.176);
+    /* box-shadow: 0 0 0 150px red; */
+    content: "";
+    position: absolute;
+    z-index: -5;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }

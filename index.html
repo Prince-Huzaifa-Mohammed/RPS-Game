@@ -38,8 +38,81 @@
                     <h2 class="score__number">15</h2>
                 </div>
             </header>
+
+            <!-- Game Section -->
+            <section class="game d-grid grid-2-cols place-items-center mt-8">
+                <!-- Paper btn -->
+                <button class="choice-btn" data-choice="paper">
+                    <div class="choice paper d-grid place-items-center">
+                        <img src="./images/icon-paper.svg" alt="Paper" />
+                    </div>
+                </button>
+
+                <!-- Scissors btn -->
+                <button class="choice-btn" data-choice="scissors">
+                    <div class="choice scissors d-grid place-items-center">
+                        <img src="./images/icon-scissors.svg" alt="Scissors" />
+                    </div>
+                </button>
+
+                <!-- Rock btn -->
+                <button class="choice-btn" data-choice="rock">
+                    <div class="choice rock d-grid place-items-center">
+                        <img src="./images/icon-rock.svg" alt="Rock" />
+                    </div>
+                </button>
+            </section>
         </div>
 
+        <!-- Rules -->
+        <button class="rules-btn btn btn--outline">Rules</button>
+
+        <!-- RESULTS SECTION -->
+        <section
+            class="display-none results d-grid grid-2-cols place-items-center center mt-8"
+        >
+            <span class="results__heading mb-5">You picked</span>
+            <span class="results__heading mb-5">The house picked</span>
+
+            <div class="results__result mt-8"></div>
+
+            <div
+                class="results__winner d-grid place-items-center g-2 display-none"
+            >
+                <h1 class="results__text"></h1>
+                <button class="play-again btn btn--primary btn--long">
+                    Play again
+                </button>
+            </div>
+
+            <div class="results__result mt-8"></div>
+        </section>
+
+        <!-- Modal Section -->
+        <div class="modal hide d-grid place-items-center">
+            <div
+                class="modal__container d-grid grid-2-cols place-items-center p-5 g-5"
+            >
+                <header class="modal__header justify-self-start">
+                    <h2 class="modal__heading">Rules</h2>
+                </header>
+
+                <img
+                    src="./images/icon-close.svg"
+                    class="close-btn justify-self-end"
+                    alt="Close button"
+                />
+
+                <div class="image__container">
+                    <img
+                        src="./images/image-rules.svg"
+                        alt="Rules of the game"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/main.js"></script>
         <script src="./js/script.js"></script>
     </body>
 </html>

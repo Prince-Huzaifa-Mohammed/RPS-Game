@@ -10,6 +10,8 @@ const resultDivs = document.querySelectorAll(".results__result");
 const resultWinner = document.querySelector(".results__winner");
 const resultText = document.querySelector(".results__text");
 
+const playAgainButton = document.querySelector(".play-again");
+
 const choices = ["rock", "paper", "scissors"];
 
 rules.addEventListener("click", (e) => {
@@ -26,6 +28,20 @@ choiceBtns.forEach((button) => {
         const choiceName = button.dataset.choice;
         choose(choiceName);
     });
+});
+
+// PLAY AGAIN
+playAgainButton.addEventListener("click", (e) => {
+    gameDiv.classList.toggle("display-none");
+    resultsDiv.classList.toggle("display-none");
+    resultDivs.forEach((resultDiv) => {
+        resultDiv.innerHTML = "";
+        resultDiv.classList.remove("winner");
+    });
+
+    resultText.innerText = "";
+    resultWinner.classList.toggle("display-none");
+    resultsDiv.classList.toggle("show-winner");
 });
 
 // function getComputerChoice() {

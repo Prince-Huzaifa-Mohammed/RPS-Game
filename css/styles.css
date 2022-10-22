@@ -708,18 +708,60 @@ span {
 
 .results__winner {
     grid-area: result-winner;
-    margin-bottom: -7rem;
+    /* margin-bottom: -7rem; */
 }
 
 .winner .choice::after {
     box-shadow: 0 0 0 60px rgba(132, 129, 172, 0.122),
         0 0 0 100px rgba(166, 162, 210, 0.09),
         0 0 0 150px rgba(73, 70, 100, 0.176);
-    /* box-shadow: 0 0 0 150px red; */
     content: "";
     position: absolute;
     z-index: -5;
     width: 100%;
     height: 100%;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .results.show-winner {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "first second"
+            "third fourth"
+            "fith fith";
+    }
+
+    .show-winner .results__heading:first-of-type {
+        grid-area: third;
+    }
+
+    .show-winner .results__heading:last-of-type {
+        grid-area: fourth;
+    }
+
+    .show-winner .results__result:first-of-type {
+        grid-area: first;
+    }
+
+    .show-winner .results__result:last-of-type {
+        grid-area: second;
+    }
+
+    .show-winner .results__winner {
+        grid-area: fith;
+        margin-top: 5rem;
+    }
+
+    .winner .choice::after {
+        box-shadow: 0 0 0 35px rgba(132, 129, 172, 0.122),
+            0 0 0 60px rgba(166, 162, 210, 0.09),
+            0 0 0 85px rgba(73, 70, 100, 0.176);
+        content: "";
+        position: absolute;
+        z-index: -5;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
 }

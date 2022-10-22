@@ -32,9 +32,11 @@ function displayWinner(results) {
         if (verdict === "win") {
             resultText.innerText = "You win";
             resultDivs[0].classList.toggle("winner");
+            updateScore(1);
         } else if (verdict === "loose") {
             resultText.innerText = "You loose";
             resultDivs[1].classList.toggle("winner");
+            updateScore(-1);
         } else {
             resultText.innerText = "Draw";
         }
@@ -60,4 +62,18 @@ function determineWinner(results) {
     } else {
         return "draw";
     }
+}
+
+function getScore() {
+    return JSON.parse(localStorage.getItem("score")) || 0;
+}
+
+function setScore(score) {
+    localStorage.setItem("score", JSON.stringify(score));
+}
+
+function updateScore(point) {
+    score += point;
+    setScore(score);
+    scoreNumber.innerText = score;
 }

@@ -14,6 +14,10 @@ const playAgainButton = document.querySelector(".play-again");
 
 const choices = ["rock", "paper", "scissors"];
 
+const scoreNumber = document.querySelector(".score__number");
+let score = getScore();
+scoreNumber.innerText = score;
+
 rules.addEventListener("click", (e) => {
     modal.classList.toggle("hide");
 });

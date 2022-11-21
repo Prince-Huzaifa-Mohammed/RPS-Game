@@ -47,26 +47,3 @@ playAgainButton.addEventListener("click", (e) => {
     resultWinner.classList.toggle("display-none");
     resultsDiv.classList.toggle("show-winner");
 });
-
-// function getComputerChoice() {
-//     const randomNumber = Math.floor(Math.random() * choices.length);
-//     return choices[randomNumber];
-// }
-
-// function choose(choice) {
-//     const computerChoice = getComputerChoice();
-//     displayResults([choice, computerChoice]);
-// }
-
-// function displayResults(results) {
-//     resultDivs.forEach((resultDiv, index) => {
-//         setTimeout(() => {
-//             resultDiv.innerHTML = `
-//                 <div class="choice ${results[index]} d-grid place-items-center">
-//                     <img src="./images/icon-${results[index]}.svg" alt="results[index]">
-//                 </div>
-
-//             `;
-//         }, index * 1000);
-//     });
-// }
